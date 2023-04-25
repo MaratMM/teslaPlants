@@ -1,0 +1,273 @@
+//необходимая часть, не удалять!!!!!!!!!
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+        url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+//добавляем шрифты
+@import "fonts";
+
+
+//глобальные настройки
+
+html,
+body {
+    font-family: 'Rubik', Helvetica, sans-serif;
+    font-style: normal;
+    height: 100%;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+// .container {
+//     max-width: 1120px;
+//     margin: 0 auto;
+//     padding: 0 10px;
+// }
+
+// .padding_for_header {
+//     padding-top: 80px;
+//     width: 100%;
+//     height: 1px;
+// }
+
+// //переменные
+// $mobile-media-size: 425px;
+// $mob-tabl-media-size: 760px;
+
+// //mixin для центровки
+
+// @mixin midle-centred ($size-width) {
+//     max-width: $size-width;
+//     margin: 0 auto;
+//     padding: 0px 10px 0 10px;
+// }
+
+//основная стилизация (импорты)
+
+// @import "header";
+
+$variable: 760px;
+
+.logoIcon {
+    @media (max-width: 320px) {
+        width: 50vw;
+    }
+}
+.popupFrame {
+    width: 100%;
+    display: none;
+    height: 100%;
+    position: fixed;
+    &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .coverPopup {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(94, 113, 134, 0.3);
+}
+    .popup {
+        .openClose {
+            position: relative;
+            align-self: flex-end;
+            margin-right: 20px;
+            margin-top: 10px;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-color: #D3D9DF;
+                border-radius: 30px;
+                width: 15px;
+                height: 2px;
+                transform: rotate(45deg);
+
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: #D3D9DF;
+                border-radius: 30px;
+                width: 15px;
+                height: 2px;
+                transform: rotate(-45deg);
+            }
+        }
+
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        height: 392px;
+        background: #FFFFFF;
+        border-radius: 20px;
+
+        h1 {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 140%;
+            text-align: center;
+            text-transform: uppercase;
+            color: #5E7186;
+            width: 190px;
+            height: 62px;
+        }
+
+        .callForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                margin-bottom: 10px;
+                width: 190px;
+                height: 50px;
+                background: #FFFFFF;
+                border: 1px solid #D3D9DF;
+                border-radius: 100px;
+                background-repeat: no-repeat;
+                background-position: 10px 13px;
+                box-sizing: border-box;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+            }
+
+            .callName {
+                background-image: url('../img/Иконка.png');
+                padding-left: 40px;
+
+                &::-webkit-input-placeholder {
+                    color: #8E9CAA;
+                }
+            }
+
+            .callPhone {
+                background-image: url('../img/Иконка\ \(1\).png');
+                padding-left: 40px;
+
+                &::-webkit-input-placeholder {
+                    color: #8E9CAA;
+                }
+            }
+
+            .callButton {
+                background-color: #5EB66D;
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+.header {
+    margin: 0 auto;
+    max-width: 1290px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $variable) {
+        flex-direction: column;
+    }
+
+    &1block {
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $variable) {
+            width: 100%;
+
+            &.modifed {}
+        }
+
+    }
+
+    &2block {
+        width: 45%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $variable) {
+            width: 100%;
+            position: fixed;
+            top: -400px;
+            transition: all 0.2s ease 0s;
+
+            &.modifed {
+                position: fixed;
+                padding: 10px;
+                transition: all 0.2s ease 0s;
+                top: 0;
+                background-color: white;
+            }
+        }
+
+    }
+
+    &Info {
+        max-width: 280px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #8E9CAA;
+        padding-left: 20px;
+
+        span {
+            @media (max-width: 320px) {
+                display: none;
+            }
+        }
+    }
+
+    &Number {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 150%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #5E7186;
+    }
+
+    .popupButton {
+        padding: 16px 35px;
+        border: 1px solid #D3D9DF;
+        border-radius: 100px;
+        box-sizing: border-box;
+        background-color: transparent;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #5EB66D;
+
+    }
+}
+
+main {
+    margin: 0;
+}

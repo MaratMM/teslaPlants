@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/Rubik-Bold.woff") format("woff"), url("../fonts/Rubik-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-display: swap;
+  src: url("../fonts/Rubik-Regular.woff") format("woff"), url("../fonts/Rubik-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: "Rubik", Helvetica, sans-serif;
+  font-style: normal;
+  height: 100%;
+  background-color: #ffffff;
+  margin: 0;
+}
+
+.popupFrame {
+  width: 100%;
+  display: none;
+  height: 100%;
+  position: fixed;
+}
+
+.popupFrame.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popupFrame .coverPopup {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(94, 113, 134, 0.3);
+}
+
+.popupFrame .popup {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  height: 392px;
+  background: #FFFFFF;
+  border-radius: 20px;
+}
+
+.popupFrame .popup .openClose {
+  position: relative;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-right: 20px;
+  margin-top: 10px;
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.popupFrame .popup .openClose::after {
+  content: "";
+  position: absolute;
+  background-color: #D3D9DF;
+  border-radius: 30px;
+  width: 15px;
+  height: 2px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.popupFrame .popup .openClose::before {
+  content: "";
+  position: absolute;
+  background-color: #D3D9DF;
+  border-radius: 30px;
+  width: 15px;
+  height: 2px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.popupFrame .popup h1 {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #5E7186;
+  width: 190px;
+  height: 62px;
+}
+
+.popupFrame .popup .callForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popupFrame .popup .callForm input {
+  margin-bottom: 10px;
+  width: 190px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 1px solid #D3D9DF;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-position: 10px 13px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.popupFrame .popup .callForm .callName {
+  background-image: url("../img/Иконка.png");
+  padding-left: 40px;
+}
+
+.popupFrame .popup .callForm .callName::-webkit-input-placeholder {
+  color: #8E9CAA;
+}
+
+.popupFrame .popup .callForm .callPhone {
+  background-image: url("../img/Иконка (1).png");
+  padding-left: 40px;
+}
+
+.popupFrame .popup .callForm .callPhone::-webkit-input-placeholder {
+  color: #8E9CAA;
+}
+
+.popupFrame .popup .callForm .callButton {
+  background-color: #5EB66D;
+  color: white;
+}
+
+.header {
+  margin: 0 auto;
+  max-width: 1290px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header1block {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header2block {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerInfo {
+  max-width: 280px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #8E9CAA;
+  padding-left: 20px;
+}
+
+.headerNumber {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 150%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #5E7186;
+}
+
+.header .popupButton {
+  padding: 16px 35px;
+  border: 1px solid #D3D9DF;
+  border-radius: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5EB66D;
+}
+
+main {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .header1block {
+    width: 100%;
+  }
+
+  .header2block {
+    width: 100%;
+    position: fixed;
+    top: -400px;
+    -webkit-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+  }
+
+  .header2block.modifed {
+    position: fixed;
+    padding: 10px;
+    -webkit-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
+    top: 0;
+    background-color: white;
+  }
+}
+
+@media (max-width: 320px) {
+  .logoIcon {
+    width: 50vw;
+  }
+
+  .headerInfo span {
+    display: none;
+  }
+}
+
+.webp .popupFrame .popup .callForm .callName{ background-image: url(../img/Иконка.webp); }
+
+.webp .popupFrame .popup .callForm .callPhone{ background-image: url("../img/Иконка (1).png"); }
