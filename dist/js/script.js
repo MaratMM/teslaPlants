@@ -2,24 +2,50 @@
 
 
 //необходимая часть , не удалять!!!!!!!!!!
-// function testWebP(callback) {
-//     var webP = new Image();
-//     webP.onload = webP.onerror = function () {
-//         callback(webP.height == 2);
-//     };
-//     webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
-// }
-// testWebP(function (support) {
-//     if (support == true) {
-//         document.querySelector('body').classList.add('webp');
-//     } else {
-//         document.querySelector('body').classList.add('no-webp');
-//     }
-// });
+function testWebP(callback) {
+    var webP = new Image();
+    webP.onload = webP.onerror = function () {
+        callback(webP.height == 2);
+    };
+    webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+}
+testWebP(function (support) {
+    if (support == true) {
+        document.querySelector('body').classList.add('webp');
+    } else {
+        document.querySelector('body').classList.add('no-webp');
+    }
+});
 
 //основной скрипт
 
+
+
 window.addEventListener('DOMContentLoaded', function () {
+    ////////////////////скрипт для слайдера swiper//////////////////////
+    if (document.querySelector('.swiper')) {
+  const swiper = new Swiper('.swiper1', {
+    // Optional parameters
+    loop: true,
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination1',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next1',
+      prevEl: '.swiper-button-prev1',
+    },
+  
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+};
+    /////////////////////////////////////////////////////////////
     let h1Bwidth = document.querySelector('.header1block').clientHeight;
     let h2Bwidth = document.querySelector('.header2block').clientHeight;
 
